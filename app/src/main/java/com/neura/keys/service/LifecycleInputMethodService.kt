@@ -9,12 +9,12 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
-import androidx.lifecycle.ViewTreeLifecycleOwner
-import androidx.lifecycle.ViewTreeViewModelStoreOwner
+import androidx.lifecycle.setViewTreeLifecycleOwner
+import androidx.lifecycle.setViewTreeViewModelStoreOwner
 import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
-import androidx.savedstate.ViewTreeSavedStateRegistryOwner
+import androidx.savedstate.setViewTreeSavedStateRegistryOwner
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -90,9 +90,9 @@ abstract class LifecycleInputMethodService : InputMethodService(),
      */
     protected fun attachComposeOwners(root: View) {
         restoreSavedStateOnce()
-        ViewTreeLifecycleOwner.set(root, this)
-        ViewTreeViewModelStoreOwner.set(root, this)
-        ViewTreeSavedStateRegistryOwner.set(root, this)
+        root.setViewTreeLifecycleOwner(this)
+        root.setViewTreeViewModelStoreOwner(this)
+        root.setViewTreeSavedStateRegistryOwner(this)
     }
 
     private fun restoreSavedStateOnce() {
