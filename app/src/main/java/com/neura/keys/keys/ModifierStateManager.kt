@@ -92,3 +92,6 @@ class ModifierStateManager {
         const val DOUBLE_TAP_WINDOW_MS = 350L
     }
 }
+
+
+fun ModifierStatus.isActive(): Boolean = this != ModifierStatus.INACTIVE

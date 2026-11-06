@@ -109,6 +109,7 @@ private fun SuggestionChip(text: String, accent: Boolean) {
     )
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun ModeSwitcherBar(
     current: KeyboardLayoutMode,
