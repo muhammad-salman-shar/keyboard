@@ -1,6 +1,7 @@
 package com.neura.keys.service
 
 import android.view.View
+import android.widget.FrameLayout
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.platform.ComposeView
 import com.neura.keys.keys.KeyboardController
@@ -25,15 +26,22 @@ class NeuraKeysService : LifecycleInputMethodService() {
     }
 
     override fun onCreateInputView(): View {
+        val root = FrameLayout(this)
         val cv = ComposeView(this)
-        attachComposeOwners(cv)
         cv.setContent {
             MaterialTheme {
                 NeuraKeysKeyboard(controller = controller)
             }
         }
+        val lp = FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.MATCH_PARENT,
+            FrameLayout.LayoutParams.WRAP_CONTENT
+        )
+        root.addView(cv, lp)
+        
+        attachComposeOwners(root)
         composeView = cv
-        return cv
+        return root
     }
 
     override fun onFinishInput() {

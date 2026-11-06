@@ -100,18 +100,42 @@ object KeyboardLayouts {
                 Key.Char(id = "w", label = "w", shiftedOutput = "W"),
                 Key.Char(id = "e", label = "e", shiftedOutput = "E"),
                 Key.Char(id = "r", label = "r", shiftedOutput = "R"),
-                Key.Char(id = "t", label = "t", shiftedOutput = "T")
+                Key.Char(id = "t", label = "t", shiftedOutput = "T"),
+                Key.Char(id = "y", label = "y", shiftedOutput = "Y"),
+                Key.Char(id = "u", label = "u", shiftedOutput = "U"),
+                Key.Char(id = "i", label = "i", shiftedOutput = "I"),
+                Key.Char(id = "o", label = "o", shiftedOutput = "O"),
+                Key.Char(id = "p", label = "p", shiftedOutput = "P")
             )),
             KeyRow(listOf(
-                Key.Modifier(id = "shift", label = "\u21E7", kind = ModifierKind.SHIFT),
                 Key.Char(id = "a", label = "a", shiftedOutput = "A"),
                 Key.Char(id = "s", label = "s", shiftedOutput = "S"),
                 Key.Char(id = "d", label = "d", shiftedOutput = "D"),
+                Key.Char(id = "f", label = "f", shiftedOutput = "F"),
+                Key.Char(id = "g", label = "g", shiftedOutput = "G"),
+                Key.Char(id = "h", label = "h", shiftedOutput = "H"),
+                Key.Char(id = "j", label = "j", shiftedOutput = "J"),
+                Key.Char(id = "k", label = "k", shiftedOutput = "K"),
+                Key.Char(id = "l", label = "l", shiftedOutput = "L"),
                 Key.Backspace()
             )),
             KeyRow(listOf(
+                Key.Modifier(id = "shift", label = "\u21E7", kind = ModifierKind.SHIFT),
+                Key.Char(id = "z", label = "z", shiftedOutput = "Z"),
+                Key.Char(id = "x", label = "x", shiftedOutput = "X"),
+                Key.Char(id = "c", label = "c", shiftedOutput = "C"),
+                Key.Char(id = "v", label = "v", shiftedOutput = "V"),
+                Key.Char(id = "b", label = "b", shiftedOutput = "B"),
+                Key.Char(id = "n", label = "n", shiftedOutput = "N"),
+                Key.Char(id = "m", label = "m", shiftedOutput = "M"),
+                Key.Char(id = "comma", label = ",", output = ","),
+                Key.Char(id = "dot", label = ".", output = ".")
+            )),
+            KeyRow(listOf(
                 Key.ModeSwitch(id = "to_pc", label = "PC", target = KeyboardLayoutMode.PC_DEVELOPER),
+                Key.Char(id = "comma_2", label = ",", output = ","),
                 Key.Space(),
+                Key.Char(id = "dot_2", label = ".", output = "."),
                 Key.Enter()
             ))
         )

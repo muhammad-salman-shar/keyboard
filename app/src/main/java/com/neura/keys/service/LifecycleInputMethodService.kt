@@ -60,6 +60,10 @@ abstract class LifecycleInputMethodService : InputMethodService(),
         }
     }
 
+    override fun onEvaluateInputViewShown(): Boolean {
+        return true
+    }
+
     override fun onStartInputView(info: EditorInfo?, restarting: Boolean) {
         super.onStartInputView(info, restarting)
         moveLifecycleTo(Lifecycle.State.RESUMED)
